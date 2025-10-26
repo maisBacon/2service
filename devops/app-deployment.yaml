@@ -16,7 +16,7 @@ spec:
       containers:
       - name: service-2
         image: renaneiras/service-2:64d5467f380cb612222dafa1e119ea9f13881787
-        imagePullPolicy: Never
+        imagePullPolicy: Always
         env:
         - name: SERVICE1_URL
           value: "http://meu-app-service"
