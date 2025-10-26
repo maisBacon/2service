@@ -15,7 +15,7 @@ spec:
       serviceAccountName: service-2-sa
       containers:
       - name: service-2
-        image: renaneiras/service-2:c5d93eaf06f3286ad10d933655517a0aeb312b97
+        image: renaneiras/service-2:64d5467f380cb612222dafa1e119ea9f13881787
         imagePullPolicy: Never
         env:
         - name: SERVICE1_URL
