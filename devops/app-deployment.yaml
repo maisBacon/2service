@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-2
+  template:
+    metadata:
+      labels:
+        app: service-2
+    spec:
+      serviceAccountName: service-2-sa
+      containers:
+      - name: service-2
+        image: renaneiras/service-2:local
+        imagePullPolicy: Never
+        env:
+        - name: SERVICE1_URL
+          value: "http://meu-app-service"
+        - name: LOG_LEVEL
+          valueFrom:
+            configMapKeyRef:
+              name: service-2-config
+              key: LOG_LEVEL
+        ports:
+        - containerPort: 3001
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "256Mi"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3001
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 3001
+          initialDelaySeconds: 5
+          periodSeconds: 5
+
