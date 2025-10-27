@@ -1,6 +1,5 @@
 'use strict';
 
-const { application } = require("express");
 
 module.exports = {
   app_name: [process.env.NEW_RELIC_APP_NAME],

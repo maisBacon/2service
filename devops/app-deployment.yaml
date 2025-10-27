@@ -21,7 +21,7 @@ spec:
         - name: NEW_RELIC_APP_NAME
           value: "service-2"
         - name: NEW_RELIC_LICENSE_KEY
-          value: "b4f962a57a224623c28eca7b518a7b0dFFFFNRAL"
+          value: ${{ secrets.NEW_RELIC_LICENSE_KEY }}
         - name: NEW_RELIC_LOG
           value: "stdout"
         - name: NEW_RELIC_LOG_LEVEL
