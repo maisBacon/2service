@@ -11,7 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "axios": "^1.6.0"
+    "axios": "^1.6.0",
+    "newrelic": "^13.5.0",
+    "winston": "^3.11.0",
+    "@newrelic/winston-enricher": "^4.0.0"
   }
 }
 

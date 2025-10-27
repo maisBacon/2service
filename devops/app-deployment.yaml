@@ -18,6 +18,16 @@ spec:
         image: renaneiras/service-2:9ed7c493a4dd212f5d1dc9ed6bac3eb67b918a6f
         imagePullPolicy: Always
         env:
+        - name: NEW_RELIC_APP_NAME
+          value: "service-2"
+        - name: NEW_RELIC_LICENSE_KEY
+          value: "b4f962a57a224623c28eca7b518a7b0dFFFFNRAL"
+        - name: NEW_RELIC_LOG
+          value: "stdout"
+        - name: NEW_RELIC_LOG_LEVEL
+          value: "info"
+        - name: NEW_RELIC_DISTRIBUTED_TRACING_ENABLED
+          value: "true"
         - name: SERVICE1_URL
           value: "http://meu-app-service"
         - name: LOG_LEVEL
