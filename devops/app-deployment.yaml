@@ -15,7 +15,7 @@ spec:
       serviceAccountName: service-2-sa
       containers:
       - name: service-2
-        image: renaneiras/service-2:d491e444dab1f2210e47f3793af7d9bc9c50c235
+        image: renaneiras/service-2:8ab7d8dc354381be51608fd93afd71aed5ed495b
         imagePullPolicy: Always
         env:
         - name: NEW_RELIC_APP_NAME
